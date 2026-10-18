@@ -18,6 +18,7 @@
 __pycache__/
 *.py[cod]
 .venv/
+uv.lock
 .pytest_cache/
 .ipynb_checkpoints/
 *.egg-info/
