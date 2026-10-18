@@ -26,6 +26,7 @@ class MSET_plot_cat:
 
     def plot_pvalues(self):
         ## 可視化
+        plt.figure()
         # pvlaues
         plt.subplot(2, 1, 1)
         im = plt.imshow(self.pvalues, interpolation='nearest')
@@ -50,6 +51,7 @@ class MSET_plot_cat:
         dpval = self.dpval * np.arange(1, self.mcat.nbins+1)[:, None]
 
         self.dpval = dpval
+        plt.figure()
         cm = generate_cmap(['white', 'red', 'yellow', 'green', 'pink'])
         #TODO need to update
         im = plt.imshow(dpval, interpolation='nearest', vmin=0, vmax=4, cmap=cm) 
@@ -85,6 +87,7 @@ class MSET_plot_ord:
 
     def plot_pvalues(self):
         ## 可視化
+        plt.figure()
         # pvlaues
         for thr in range(self.mord.nthrs):
             plt.subplot(self.mord.nthrs, 2, thr * 2 + 1)
@@ -103,6 +106,7 @@ class MSET_plot_ord:
 
     def plot_dperiods(self, disp_val=False, alpha=alpha1, mode='union'):
         self.calc_dperiods(alpha, mode, disp_val)
+        plt.figure()
         im = plt.imshow(self.dpval, interpolation='nearest') 
         plt.grid(True)
         plt.hot() 
