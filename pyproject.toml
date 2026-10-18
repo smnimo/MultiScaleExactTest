@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mset"
+version = "0.1.0"
+description = "MSET: multi-scale exact test for detecting distinctive periods in choice behavior (AAAI 2020)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy", "scipy", "matplotlib"]
+
+[project.optional-dependencies]
+# experiments/: the TreeTagger scripts also need the TreeTagger program
+experiments = ["pandas", "scikit-learn", "treetaggerwrapper"]
+
+[dependency-groups]
+# development only (not part of the package): uv pip install --group test
+test = ["pytest"]
+
+[tool.setuptools]
+packages = ["mset"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

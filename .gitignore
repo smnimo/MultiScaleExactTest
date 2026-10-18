@@ -1,0 +1,24 @@
+# data: track the gaze and behavior data only; the review data (Amazon, Yelp) stays local
+/data/*
+!/data/gazedata.csv
+!/data/behavior/
+*.xlsx
+
+# local references used while migrating from AspectEstimation (not tracked)
+/refs/
+
+# temporary code
+/experiments/tmp/
+
+# editors, OS
+.vscode/
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+build/

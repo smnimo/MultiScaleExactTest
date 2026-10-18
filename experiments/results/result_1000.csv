@@ -1,0 +1,149 @@
+====
+MSET
+====
+MSET toy 0
+recall:  1.0
+precition:  0.5897435897435898
+accuracy:  0.8446601941747572
+
+
+MSET toy 1
+recall:  1.0
+precition:  0.5
+accuracy:  0.7766990291262136
+
+
+
+
+==========
+one class SVM
+==========
+one class SVM toy 0
+window:  5
+recall:  1.0
+precition:  0.2987012987012987
+accuracy:  0.47572815533980584
+
+
+one class SVM toy 0
+window:  10
+recall:  1.0
+precition:  0.25555555555555554
+accuracy:  0.34951456310679613
+
+
+one class SVM toy 1
+window:  5
+recall:  0.5652173913043478
+precition:  0.2549019607843137
+accuracy:  0.5339805825242718
+
+
+one class SVM toy 1
+window:  10
+recall:  1.0
+precition:  0.32857142857142857
+accuracy:  0.5436893203883495
+
+
+
+
+==========
+likelihood
+==========
+likelihood toy 0
+window:  5
+thr:  0.01
+recall:  1.0
+precition:  0.34328358208955223
+accuracy:  0.5728155339805825
+
+
+likelihood toy 0
+window:  5
+thr:  0.001
+recall:  1.0
+precition:  0.92
+accuracy:  0.9805825242718447
+
+
+likelihood toy 0
+window:  5
+thr:  0.0001
+recall:  0.0
+precition:  nan
+accuracy:  0.7766990291262136
+
+
+likelihood toy 0
+window:  10
+thr:  0.01
+recall:  1.0
+precition:  0.23958333333333334
+accuracy:  0.2912621359223301
+
+
+likelihood toy 0
+window:  10
+thr:  0.001
+recall:  1.0
+precition:  0.38333333333333336
+accuracy:  0.6407766990291263
+
+
+likelihood toy 0
+window:  10
+thr:  0.0001
+recall:  0.782608695652174
+precition:  0.6428571428571429
+accuracy:  0.8543689320388349
+
+
+likelihood toy 1
+window:  5
+thr:  0.01
+recall:  0.9565217391304348
+precition:  0.39285714285714285
+accuracy:  0.6601941747572816
+
+
+likelihood toy 1
+window:  5
+thr:  0.001
+recall:  0.4782608695652174
+precition:  0.8461538461538461
+accuracy:  0.8640776699029126
+
+
+likelihood toy 1
+window:  5
+thr:  0.0001
+recall:  0.0
+precition:  nan
+accuracy:  0.7766990291262136
+
+
+likelihood toy 1
+window:  10
+thr:  0.01
+recall:  1.0
+precition:  0.24210526315789474
+accuracy:  0.30097087378640774
+
+
+likelihood toy 1
+window:  10
+thr:  0.001
+recall:  0.782608695652174
+precition:  0.5
+accuracy:  0.7766990291262136
+
+
+likelihood toy 1
+window:  10
+thr:  0.0001
+recall:  0.0
+precition:  nan
+accuracy:  0.7766990291262136
+
+
