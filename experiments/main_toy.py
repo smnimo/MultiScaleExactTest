@@ -43,16 +43,21 @@ print('median = ', np.median(dseq[0]))
 
 h, _ = np.histogram(dseq[0], bins=np.arange(0, 5))
 print(h)
-plt.hist(dseq[0], bins=np.arange(0,5))
 
 print('mean = ', np.mean(dseq[1]))
 print('median = ', np.median(dseq[1]))
 
 h, _ = np.histogram(dseq[1], bins=np.arange(0, 5))
 print(h)
-plt.hist(dseq[1], bins=np.arange(0,5))
 
-n_probs = 1
+# counts of the values 0..3 in the two toy sequences, side by side
+plt.hist(dseq, bins=np.arange(-0.5, 4.5), label=['seq 1', 'seq 2'])
+plt.xticks(np.arange(4))
+plt.xlabel('value')
+plt.ylabel('count')
+plt.legend()
+
+n_probs = len(dseq)  # both toy sequences
 
 ## mset
 ## make p values table
@@ -76,7 +81,7 @@ for i in range(n_probs):
     rec = TP / (TP+FN)
     prec = TP / (TP + FP)
     acc = (TP+TN)/(TP+FN+FP+TN)
-    print("result of MSET, seq:", i)
+    print("result of MSET, seq:", i+1)
     print("recall: ", rec)
     print("precition: ", prec)
     print("accuracy: ", acc)
@@ -111,7 +116,7 @@ for i in range(n_probs):
         plt.subplot(len(win_sizes), 1, j+1)
         plt.imshow(tmp[np.newaxis, :], cmap=cm)
 #        plt.grid(True)
-        plt.title("OCSVM, win:{}, prec:{}, rec:{}".format(win_size, prec, rec))
+        plt.title("seq {}, OCSVM, win:{}, prec:{:.3f}, rec:{:.3f}".format(i+1, win_size, prec, rec))
     #plt.show()
 
 # likelihood
@@ -122,7 +127,7 @@ for i in range(n_probs):
     for win_size in win_sizes:
         plt.figure()
         for j,thr in enumerate(thrs):
-            rv = multinomial(win_size, neu_prob[0])
+            rv = multinomial(win_size, neu_prob[i])
             subseq = []
             for t in range(len(dseq[i])-win_size+1):
                 h_tmp, _ = np.histogram(dseq[i][t:t+win_size], bins=np.arange(0, 5))
@@ -142,5 +147,5 @@ for i in range(n_probs):
             plt.subplot(len(thrs), 1, j+1)
             plt.imshow(tmp[np.newaxis, :], cmap=cm)
 #            plt.grid(True)
-            plt.title("LD, win:{}, thr:{}, prec:{}, rec:{}".format(win_size, thr, prec, rec))
+            plt.title("seq {}, LD, win:{}, thr:{}, prec:{:.3f}, rec:{:.3f}".format(i+1, win_size, thr, prec, rec))
 plt.show()
