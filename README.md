@@ -44,13 +44,6 @@ uv pip install -e ".[experiments]"   # 実験スクリプトも動かす場合
   インストール先は各スクリプトの `TAGDIR` に直接書かれているので、環境に合わせて書き換える。
 - 実験スクリプトは `experiments/` から実行する（データを `../data/` で参照している）。
 
-## テスト
-
-```sh
-uv pip install --group test   # pytest（開発用の依存グループ。パッケージの依存には含まれない）
-.venv/bin/python -m pytest    # リポジトリ直下で
-```
-
 ## 使い方
 
 ```python
